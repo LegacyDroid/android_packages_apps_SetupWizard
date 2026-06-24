@@ -43,16 +43,6 @@
                 android:scaleType="fitCenter"
                 android:gravity="center" />
 
-            <TextView
-                android:id="@+id/welcome_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/welcome_to_legacy_droid"
-                android:textSize="18sp"
-                android:textColor="#1e1e1e"
-                android:typeface="sans" />
-
             <Button
                 android:id="@+id/start"
                 android:layout_width="wrap_content"
