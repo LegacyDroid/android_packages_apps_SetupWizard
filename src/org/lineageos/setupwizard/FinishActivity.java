@@ -83,6 +83,15 @@ public class FinishActivity extends BaseSetupWizardActivity {
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
         setNextText(R.string.start);
+
+        android.widget.Button nextButton = getNavigationBar().getNextButton();
+        if (nextButton != null) {
+            android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) nextButton.getLayoutParams();
+            params.removeRule(android.widget.RelativeLayout.ALIGN_PARENT_END);
+            params.addRule(android.widget.RelativeLayout.CENTER_HORIZONTAL);
+            nextButton.setLayoutParams(params);
+        }
+
         startAnimations();
     }
 
