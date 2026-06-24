@@ -19,9 +19,7 @@ package org.lineageos.setupwizard;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
-import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -74,13 +72,15 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
         logoAnim.setInterpolator(new AccelerateDecelerateInterpolator());
         logoAnim.playTogether(logoScaleX, logoScaleY, logoAlpha);
 
+        final TextView welcomeText = findViewById(R.id.welcome_text);
+
         logoAnim.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
                 logo.setVisibility(View.VISIBLE);
             }
             @Override public void onAnimationEnd(Animator animation) {
-                animateLetters();
+                animateWelcomeText(welcomeText);
             }
             @Override public void onAnimationCancel(Animator animation) {}
             @Override public void onAnimationRepeat(Animator animation) {}
@@ -89,30 +89,19 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
         logoAnim.start();
     }
 
-    private void animateLetters() {
-        String text = "LegacyDroid";
-        for (int i = 0; i < text.length(); i++) {
-            final int index = i;
-            int resId = getResources().getIdentifier("letter_" + i, "id", getPackageName());
-            final TextView letter = findViewById(resId);
-            if (letter == null) continue;
+    private void animateWelcomeText(TextView welcomeText) {
+        if (welcomeText == null) return;
+        welcomeText.setTranslationY(40f);
+        welcomeText.setAlpha(0f);
+        welcomeText.setVisibility(View.VISIBLE);
 
-            letter.setTranslationY(120f);
-            letter.setAlpha(0f);
-            letter.setVisibility(View.VISIBLE);
-
-            Keyframe kf0 = Keyframe.ofFloat(0f, 120f);
-            Keyframe kf1 = Keyframe.ofFloat(0.5f, -15f);
-            Keyframe kf2 = Keyframe.ofFloat(1f, 0f);
-            PropertyValuesHolder jump = PropertyValuesHolder.ofKeyframe(View.TRANSLATION_Y, kf0, kf1, kf2);
-            PropertyValuesHolder fade = PropertyValuesHolder.ofFloat(View.ALPHA, 0f, 1f);
-
-            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(letter, jump, fade);
-            anim.setDuration(400);
-            anim.setInterpolator(new AccelerateDecelerateInterpolator());
-
-            mHandler.postDelayed(() -> anim.start(), 800 + (index * 80));
-        }
+        ObjectAnimator slide = ObjectAnimator.ofFloat(welcomeText, View.TRANSLATION_Y, 40f, 0f);
+        ObjectAnimator fade = ObjectAnimator.ofFloat(welcomeText, View.ALPHA, 0f, 1f);
+        AnimatorSet set = new AnimatorSet();
+        set.setDuration(500);
+        set.setInterpolator(new AccelerateDecelerateInterpolator());
+        set.playTogether(slide, fade);
+        set.start();
     }
 
     @Override
