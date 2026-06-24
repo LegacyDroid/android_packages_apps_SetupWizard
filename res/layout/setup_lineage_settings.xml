@@ -44,50 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <!-- The caption about privacy policy -->
-                    <TextView
-                        android:id="@+id/privacy_policy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/SudItemTitle.GlifDescription"
-                        android:text="@string/services_pp_explanation" />
-
-                    <TextView
-                        android:id="@+id/find_privacy_policy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/SudItemTitle.GlifDescription"
-                        android:text="@string/services_find_privacy_policy" />
-
-                    <!-- Whether or not to enable metrics -->
-                    <LinearLayout
-                        android:id="@+id/metrics"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/location_margin_left"
-                        android:paddingRight="@dimen/content_margin_right"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:clickable="true">
-
-
-                        <CheckBox
-                            android:id="@+id/enable_metrics_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:duplicateParentState="true"
-                            android:clickable="false"
-                            style="@style/SudCheckBox.Multiline" />
-
-                        <TextView
-                            android:id="@+id/enable_metrics_summary"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/services_metrics_label"
-                            style="@style/SudCheckBox.Multiline" />
-
-                    </LinearLayout>
-
+                    <!-- Whether or not to enable on screen nav keys -->
                     <!-- Checkbox for using on-screen nav keys -->
                     <LinearLayout
                         android:id="@+id/nav_keys"

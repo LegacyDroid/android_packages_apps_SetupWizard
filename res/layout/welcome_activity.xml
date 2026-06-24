@@ -35,21 +35,62 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/brand_logo"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logo"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
+                android:layout_gravity="center"
                 android:gravity="center"
-                android:padding="@dimen/content_margin_left" />
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/brand_logo"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/logo"
+                    android:scaleType="fitCenter"
+                    android:gravity="center" />
+
+                <LinearLayout
+                    android:id="@+id/letter_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView android:id="@+id/letter_0" android:text="L"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_1" android:text="E"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_2" android:text="G"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_3" android:text="A"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_4" android:text="C"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_5" android:text="Y"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_6" android:text="D"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_7" android:text="R"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_8" android:text="O"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_9" android:text="I"
+                        style="@style/legacy_droid_letter" />
+                    <TextView android:id="@+id/letter_10" android:text="D"
+                        style="@style/legacy_droid_letter" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="32dp"
                 android:text="@string/start"
                 style="@style/SudGlifButton.Primary" />
 
