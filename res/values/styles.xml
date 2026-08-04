@@ -24,7 +24,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
         <item name="sudButtonCornerRadius">@dimen/legacy_button_corner_radius</item>
-        <item name="sudDividerColor">@color/legacy_surface_variant</item>
+        <item name="android:listDivider">@drawable/legacy_divider</item>
     </style>
 
     <style name="LegacyButton.Primary" parent="@style/SudGlifButton.Primary">

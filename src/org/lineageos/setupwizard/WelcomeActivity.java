@@ -14,7 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.setupcompat.util.SystemBarHelper;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import org.lineageos.setupwizard.util.SetupWizardUtils;
 
@@ -31,7 +33,7 @@ public class WelcomeActivity extends SubBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onSetupStart();
-        SystemBarHelper.setBackButtonVisible(getWindow(), false);
+        applyFullscreen();
         Button startButton = findViewById(R.id.start);
         Button emergButton = findViewById(R.id.emerg_dialer);
         startButton.setOnClickListener(view -> onNextPressed());
@@ -54,6 +56,20 @@ public class WelcomeActivity extends SubBaseActivity {
 
     @Override
     public void onBackPressed() {
+    }
+
+    /**
+     * Hide both the status bar and the navigation bar so the welcome hero
+     * draws edge-to-edge over the whole screen (no black system bars).
+     */
+    private void applyFullscreen() {
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        WindowInsetsControllerCompat controller =
+                WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        controller.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+        controller.hide(WindowInsetsCompat.Type.statusBars()
+                | WindowInsetsCompat.Type.navigationBars());
     }
 
     @Override
