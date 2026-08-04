@@ -11,4 +11,24 @@
     <color name="button_bar_text_disabled">#321e1e1e</color>
 
     <color name="divider">#40000000</color>
+
+    <!-- LegacyDroid Material You - Dark Green/Tech palette -->
+    <color name="legacy_primary">#9CD67D</color>
+    <color name="legacy_on_primary">#0C3900</color>
+    <color name="legacy_primary_container">#1F5107</color>
+    <color name="legacy_on_primary_container">#B7F397</color>
+
+    <color name="legacy_secondary">#A4D395</color>
+    <color name="legacy_secondary_container">#205014</color>
+
+    <color name="legacy_surface">#1A1C19</color>
+    <color name="legacy_on_surface">#E2E3DD</color>
+    <color name="legacy_surface_variant">#42493F</color>
+    <color name="legacy_on_surface_variant">#C2C9BD</color>
+
+    <color name="legacy_surface_container">#2D312C</color>
+    <color name="legacy_surface_container_high">#2B2F2A</color>
+
+    <color name="legacy_primary_disabled">#4D9CD67D</color>
+    <color name="legacy_primary_pressed">#8A9CD67D</color>
 </resources>

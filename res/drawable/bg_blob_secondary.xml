@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LegacyDroid Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="50%p"
+        android:startColor="#7A205014"
+        android:centerColor="#3A205014"
+        android:endColor="#00205014" />
+</shape>

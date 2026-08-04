@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LegacyDroid Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/legacy_button_corner_radius" />
+            <solid android:color="@color/legacy_primary_disabled" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/legacy_button_corner_radius" />
+            <solid android:color="@color/legacy_primary_pressed" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/legacy_button_corner_radius" />
+            <solid android:color="@color/legacy_primary" />
+        </shape>
+    </item>
+</selector>
