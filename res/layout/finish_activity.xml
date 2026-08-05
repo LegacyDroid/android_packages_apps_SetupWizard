@@ -28,16 +28,27 @@
         android:orientation="vertical"
         style="@style/SudContentFrame">
 
-        <ImageView
-            android:id="@+id/brand_logo"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="1"
-            android:src="@drawable/logo"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:gravity="center"
-            android:padding="@dimen/content_margin_left"/>
+            android:gravity="center">
+
+            <FrameLayout
+                android:id="@+id/brand_logo"
+                android:layout_width="@dimen/legacy_logo_circle_size"
+                android:layout_height="@dimen/legacy_logo_circle_size"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_logo_circle">
+
+                <ImageView
+                    android:layout_width="@dimen/legacy_logo_size"
+                    android:layout_height="@dimen/legacy_logo_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_android_robot" />
+            </FrameLayout>
+        </FrameLayout>
 
         <org.lineageos.setupwizard.NavigationLayout
             android:id="@+id/navigation_bar"
